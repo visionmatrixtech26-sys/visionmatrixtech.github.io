@@ -1589,7 +1589,8 @@ function rcSend() {
       rcAddMsg('bot', '⚠️ ' + (data.error || 'Something went wrong. Please try again.'));
     }
   })
-  .catch(function() {
+  .catch(function(err) {
+    console.error("🚨 CRITICAL BOT FAILURE:", err);
     rcHideTyping();
     rcAddMsg('bot', '⚠️ Could not connect right now.<br/><br/>Reach Chandan directly on <a href="https://wa.me/919148529970" target="_blank" style="color:var(--navy);font-weight:700;">WhatsApp →</a>');
   });
