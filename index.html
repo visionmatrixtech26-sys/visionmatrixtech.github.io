@@ -1653,7 +1653,7 @@ function rcSend() {
   rcMessages.push({ role: 'user', content: text });
 
   // Check API key
-  if (RC_API_KEY === 'YOUR_API_KEY_HERE') {
+  if (RC_API_KEY === '') {
     rcAddMsg('bot', '⚠️ <strong>Setup needed:</strong> Please add your Anthropic API key in the code. Get a free key at <a href="https://console.anthropic.com" target="_blank" style="color:var(--navy);font-weight:700;">console.anthropic.com</a><br/><br/>Once you add the key, I\'ll be fully functional! 🚀');
     return;
   }
