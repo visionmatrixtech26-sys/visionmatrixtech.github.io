@@ -98,7 +98,7 @@ exports.handler = async function (event) {
     }
 
     // Pulling the Gemini key from Netlify Environment Variables
-    const apiKey = process.env.RC;
+    const apiKey = process.env.rc;
     if (!apiKey) {
       return { statusCode: 500, headers, body: JSON.stringify({ error: 'API key not configured on server' }) };
     }
