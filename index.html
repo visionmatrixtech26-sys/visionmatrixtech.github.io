@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://rcanantha.com/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -40,7 +40,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  font-family:'Plus Jakarta Sans',sans-serif;
+  font-family:'Space Grotesk',sans-serif;
   background:var(--bg);color:var(--txt);
   overflow-x:hidden;line-height:1.65;
   -webkit-font-smoothing:antialiased;
@@ -70,8 +70,8 @@ section{padding:80px 20px;}
 }
 .lbl::before{content:'';width:20px;height:1.5px;background:var(--gold);}
 .h2{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(1.9rem,4.5vw,3.2rem);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3.5vw,2.6rem);
   font-weight:800;line-height:1.1;
   letter-spacing:-0.03em;margin-bottom:16px;
 }
@@ -94,7 +94,7 @@ section{padding:80px 20px;}
   align-items:center;justify-content:center;gap:24px;
 }
 .pre-logo{
-  font-family:'Syne',sans-serif;font-size:1.8rem;
+  font-family:'Playfair Display',serif;font-size:1.8rem;
   font-weight:800;letter-spacing:-0.02em;
 }
 .pre-logo span{color:var(--gold);}
@@ -142,11 +142,11 @@ nav{
 }
 .nav-logo-wrap img{width:100%;height:100%;object-fit:cover;}
 .nav-logo-fallback{
-  font-family:'Syne',sans-serif;font-size:11px;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:11px;font-weight:800;
   color:var(--gold);letter-spacing:.5px;text-align:center;line-height:1.2;
 }
 .nav-name{
-  font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;
   letter-spacing:-0.02em;
 }
 .nav-name em{color:var(--gold);font-style:normal;}
@@ -214,10 +214,10 @@ nav{
 
 /* H1 */
 .hero-h1{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(3rem,10vw,7rem);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,5.5vw,3.8rem);
   font-weight:800;line-height:1.03;
-  letter-spacing:-0.04em;margin-bottom:24px;
+  letter-spacing:-0.02em;margin-bottom:24px;
 }
 .hero-p{
   color:var(--mut);font-size:clamp(.95rem,2.5vw,1.08rem);
@@ -233,7 +233,7 @@ nav{
 }
 .hs{flex:1;padding:18px 12px;text-align:center;border-right:1px solid var(--bor1);min-width:100px;}
 .hs:last-child{border-right:none;}
-.hs-n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;display:block;}
+.hs-n{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1;display:block;}
 .hs-l{font-size:.65rem;color:var(--mut);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;display:block;}
 
 /* ── BUTTONS ── */
@@ -241,7 +241,7 @@ nav{
   display:inline-flex;align-items:center;gap:8px;
   padding:13px 26px;border-radius:10px;
   font-weight:700;font-size:.9rem;
-  font-family:'Plus Jakarta Sans',sans-serif;
+  font-family:'Space Grotesk',sans-serif;
   transition:all .22s;border:none;cursor:pointer;
   white-space:nowrap;
 }
@@ -315,15 +315,17 @@ nav{
 }
 .fcard:hover::before{opacity:1;}
 .fcard-ico{
-  width:48px;height:48px;border-radius:14px;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  display:grid;place-items:center;
-  font-size:1.2rem;margin-bottom:18px;
-  box-shadow:0 8px 24px rgba(27,58,107,.4);
+  width:100%;height:150px;border-radius:12px;
+  overflow:hidden;margin-bottom:18px;
   position:relative;z-index:1;
 }
+.fcard-ico img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:12px;transition:transform .45s ease;
+}
+.fcard:hover .fcard-ico img{transform:scale(1.07);}
 .fcard h3{
-  font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;
   margin-bottom:8px;position:relative;z-index:1;
 }
 .fcard p{font-size:.84rem;color:var(--mut);line-height:1.7;position:relative;z-index:1;}
@@ -349,7 +351,7 @@ nav{
 }
 .stat-cell:hover{background:var(--bg2);}
 .stat-num{
-  font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:800;
   color:var(--gold);line-height:1;margin-bottom:6px;display:block;
 }
 .stat-lbl{font-size:.78rem;color:var(--mut);line-height:1.5;}
@@ -370,7 +372,7 @@ nav{
 }
 .proc-card:hover{background:var(--bg3);}
 .proc-n{
-  font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:800;
   color:rgba(201,168,76,.1);line-height:1;position:absolute;top:16px;right:20px;
 }
 .proc-ico{
@@ -382,7 +384,7 @@ nav{
 .pi2{background:rgba(201,168,76,.15);color:var(--gold);}
 .pi3{background:rgba(34,197,94,.12);color:#4ADE80;}
 .proc-card h3{
-  font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;
+  font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;
   margin-bottom:10px;position:relative;z-index:1;
 }
 .proc-card p{font-size:.86rem;color:var(--mut);line-height:1.7;position:relative;z-index:1;}
@@ -406,27 +408,29 @@ nav{
   box-shadow:0 32px 64px rgba(0,0,0,.5),0 0 40px rgba(201,168,76,.06);
 }
 .wcard-vis{
-  height:200px;position:relative;overflow:hidden;
+  height:240px;position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
 }
-.wv1{background:linear-gradient(135deg,#060D1F,#1B3A6B);}
-.wv2{background:linear-gradient(135deg,#0A1520,#0D2535);}
+.wv1{background:#060D1F;}
+.wv2{background:#0A1520;}
+.wcard-vis img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+  opacity:.75;
+}
+.wcard:hover .wcard-vis img{transform:scale(1.06);opacity:.9;}
 .wcard-vis::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 30%,rgba(6,13,31,.9));
+  background:linear-gradient(to bottom,rgba(6,13,31,.1) 0%,rgba(6,13,31,.85) 100%);
 }
 .wcard-tag-row{
   display:flex;gap:6px;flex-wrap:wrap;
   position:absolute;bottom:16px;left:16px;z-index:2;
 }
-.wcard-ico{
-  font-size:3rem;opacity:.15;
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-}
+.wcard-ico{ display:none; }
 .wcard-body{padding:24px;}
 .wcard-title{
-  font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
   margin-bottom:8px;
 }
 .wcard-result{
@@ -460,7 +464,7 @@ nav{
   justify-content:space-between;flex-wrap:wrap;gap:14px;
   margin-bottom:16px;
 }
-.val-row h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:5px;}
+.val-row h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;margin-bottom:5px;}
 .val-row p{font-size:.86rem;color:var(--mut);line-height:1.6;max-width:420px;}
 .val-badge{
   text-align:center;background:var(--gold3);
@@ -468,7 +472,7 @@ nav{
   padding:12px 18px;flex-shrink:0;
 }
 .val-badge .big{
-  font-family:'Syne',sans-serif;font-size:2.2rem;
+  font-family:'Playfair Display',serif;font-size:2.2rem;
   font-weight:800;color:var(--gold);line-height:1;display:block;
 }
 .val-badge .sm{font-size:.65rem;color:var(--mut);font-weight:600;}
@@ -487,7 +491,7 @@ nav{
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);
   border-radius:8px;padding:8px 18px;text-align:center;flex-shrink:0;
 }
-.lb-code .c{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:.1em;}
+.lb-code .c{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:.1em;}
 .lb-code .l{font-size:.58rem;color:rgba(255,255,255,.6);font-weight:600;text-transform:uppercase;letter-spacing:.12em;}
 /* Swipe hint */
 .swipe{display:none;text-align:center;font-size:.75rem;color:var(--dim);margin-bottom:10px;}
@@ -525,7 +529,7 @@ nav{
   white-space:nowrap;letter-spacing:.08em;text-transform:uppercase;
 }
 .pc-lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:700;margin-bottom:8px;}
-.pc-price{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;line-height:1;margin-bottom:4px;}
+.pc-price{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:800;line-height:1;margin-bottom:4px;}
 .pc-offer{font-size:.72rem;color:#4ADE80;font-weight:700;margin-bottom:3px;}
 .pc-for{font-size:.75rem;color:var(--mut);margin-bottom:8px;line-height:1.4;}
 .pc-live{
@@ -542,7 +546,7 @@ nav{
 .pc-btn{
   display:block;width:100%;padding:12px;border-radius:9px;
   font-weight:700;font-size:.86rem;text-align:center;
-  font-family:'Plus Jakarta Sans',sans-serif;transition:all .2s;
+  font-family:'Space Grotesk',sans-serif;transition:all .2s;
 }
 .pb-def{background:transparent;border:1.5px solid var(--bor2);color:var(--txt);}
 .pb-def:hover{border-color:var(--gold);background:var(--gold3);}
@@ -567,7 +571,7 @@ nav{
 }
 .tc:hover{border-color:var(--bor3);transform:translateY(-5px);}
 .tc-stars{color:var(--gold);font-size:.9rem;letter-spacing:3px;margin-bottom:14px;}
-.tc-q{font-size:3.5rem;color:rgba(201,168,76,.2);font-family:'Syne',sans-serif;line-height:.8;margin-bottom:8px;}
+.tc-q{font-size:3.5rem;color:rgba(201,168,76,.2);font-family:'Playfair Display',serif;line-height:.8;margin-bottom:8px;}
 .tc-txt{
   font-size:.88rem;color:rgba(240,244,255,.7);
   line-height:1.85;font-style:italic;margin-bottom:20px;
@@ -580,7 +584,7 @@ nav{
   width:40px;height:40px;border-radius:50%;flex-shrink:0;
   background:linear-gradient(135deg,var(--blue),var(--gold));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-weight:800;color:#fff;
+  font-family:'Playfair Display',serif;font-weight:800;color:#fff;
 }
 .tc-name{font-size:.88rem;font-weight:700;}
 .tc-biz{font-size:.75rem;color:var(--mut);margin-top:2px;}
@@ -627,11 +631,11 @@ nav{
 }
 .wc:hover{border-color:var(--bor3);transform:translateY(-5px);}
 .wc-n{
-  font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;
+  font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;
   color:rgba(201,168,76,.15);line-height:1;margin-bottom:8px;
 }
 .wc-em{font-size:1.4rem;margin-bottom:10px;display:block;}
-.wc h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:8px;}
+.wc h3{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;margin-bottom:8px;}
 .wc p{font-size:.82rem;color:var(--mut);line-height:1.7;}
 
 /* ══════════════════════════════════
@@ -699,11 +703,11 @@ nav{
   width:80px;height:80px;flex-shrink:0;border-radius:50%;
   background:linear-gradient(135deg,var(--blue),var(--gold));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;
+  font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#fff;
   border:3px solid rgba(201,168,76,.35);
   box-shadow:0 0 32px rgba(201,168,76,.12);
 }
-.founder-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:8px;}
+.founder-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;margin-bottom:8px;}
 .founder-bio{font-size:.88rem;color:var(--mut);line-height:1.8;max-width:600px;}
 
 /* ══════════════════════════════════
@@ -759,7 +763,7 @@ details.fqi p{margin-top:10px;color:var(--mut);font-size:.85rem;line-height:1.75
 footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 24px;}
 .foot-inner{max-width:1120px;margin:0 auto;}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:44px;margin-bottom:32px;}
-.foot-brand{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:8px;}
+.foot-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;margin-bottom:8px;}
 .foot-brand em{color:var(--gold);font-style:normal;}
 .foot-tag{font-size:.82rem;color:var(--mut);line-height:1.7;max-width:240px;}
 .foot-col h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:12px;}
@@ -858,7 +862,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
   width:32px;height:32px;border-radius:50%;flex-shrink:0;
   background:linear-gradient(135deg,var(--blue),var(--gold));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:.85rem;
+  font-family:'Playfair Display',serif;font-weight:800;color:#fff;font-size:.85rem;
 }
 .bh-name{font-size:.85rem;font-weight:700;display:block;}
 .bh-status{font-size:.6rem;color:var(--mut);display:flex;align-items:center;gap:3px;margin-top:1px;}
@@ -901,7 +905,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
   background:rgba(27,58,107,.4);border:1px solid var(--bor1);
   color:var(--txt);font-size:.68rem;font-weight:600;
   padding:4px 9px;border-radius:100px;cursor:pointer;
-  transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;
+  transition:all .2s;font-family:'Space Grotesk',sans-serif;
 }
 .bchip:hover{background:var(--gold);border-color:var(--gold);color:var(--bg);}
 .bot-inp-row{
@@ -911,7 +915,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
 .bot-inp{
   flex:1;background:rgba(10,21,48,.6);border:1px solid var(--bor2);
   border-radius:9px;padding:8px 11px;font-size:.8rem;
-  font-family:'Plus Jakarta Sans',sans-serif;color:var(--txt);
+  font-family:'Space Grotesk',sans-serif;color:var(--txt);
   outline:none;transition:border-color .2s;
 }
 .bot-inp:focus{border-color:var(--gold);}
@@ -1018,7 +1022,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
   .val-row{flex-direction:column;text-align:center;}
 }
 @media(max-width:580px){
-  .hero-h1{font-size:clamp(2.6rem,11vw,3.8rem);}
+  .hero-h1{font-size:clamp(1.7rem,6vw,2.8rem);}
   .float-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .ind-grid{grid-template-columns:repeat(2,1fr);}
@@ -1190,37 +1194,37 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
     <p class="sub sr">From your first website to full AI automation — 12 services, one agency.</p>
     <div class="float-grid">
       <div class="fcard sr">
-        <div class="fcard-ico"><i class="fas fa-globe"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop&auto=format" alt="Website Design" loading="lazy"/></div>
         <h3>Website Design</h3>
         <p>Fast, mobile-ready websites that build trust and convert visitors into paying customers. Your shop that never closes.</p>
         <div class="fcard-price">From ₹5,000 · Live in 7 Days</div>
       </div>
       <div class="fcard sr">
-        <div class="fcard-ico" style="background:linear-gradient(135deg,#16a34a,#15803d);"><i class="fas fa-search"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=500&h=300&fit=crop&auto=format" alt="SEO Google Rankings" loading="lazy"/></div>
         <h3>SEO &amp; Google Rankings</h3>
         <p>Get to Page 1 for local Anantapur searches. Free organic traffic with no ongoing ad spend once you rank.</p>
         <div class="fcard-price">From ₹3,999/month</div>
       </div>
       <div class="fcard sr">
-        <div class="fcard-ico" style="background:linear-gradient(135deg,#7C3AED,#6D28D9);"><i class="fas fa-mobile-alt"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop&auto=format" alt="Mobile App Development" loading="lazy"/></div>
         <h3>Mobile App Development</h3>
         <p>Your brand on the customer's home screen. Booking, ordering, tracking — without calling you.</p>
         <div class="fcard-price">From ₹8,999</div>
       </div>
       <div class="fcard sr">
-        <div class="fcard-ico" style="background:linear-gradient(135deg,#0891B2,#0E7490);"><i class="fas fa-chart-bar"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&auto=format" alt="CRM Software" loading="lazy"/></div>
         <h3>CRM &amp; Business Software</h3>
         <p>Never lose a lead again. Automatic follow-up reminders, full pipeline view, real revenue tracking.</p>
         <div class="fcard-price">From ₹12,000</div>
       </div>
       <div class="fcard sr">
-        <div class="fcard-ico" style="background:linear-gradient(135deg,#16a34a,#15803d);"><i class="fab fa-whatsapp"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=500&h=300&fit=crop&auto=format" alt="WhatsApp Automation" loading="lazy"/></div>
         <h3>WhatsApp Automation</h3>
         <p>Reply to 100 customers as fast as replying to one. Order confirmations, alerts, follow-ups — automatic.</p>
         <div class="fcard-price">₹5,999 + ₹999/month</div>
       </div>
       <div class="fcard sr">
-        <div class="fcard-ico" style="background:linear-gradient(135deg,#EA580C,#C2410C);"><i class="fas fa-robot"></i></div>
+        <div class="fcard-ico"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&h=300&fit=crop&auto=format" alt="AI Chatbot" loading="lazy"/></div>
         <h3>AI Chatbot for Business</h3>
         <p>Answers questions, qualifies leads, books appointments 24/7. Less than one hour of part-time staff per month.</p>
         <div class="fcard-price">Just ₹999/month</div>
@@ -1266,7 +1270,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
     <div class="work-grid">
       <div class="wcard sr">
         <div class="wcard-vis wv1">
-          <div class="wcard-ico"><i class="fas fa-truck"></i></div>
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&h=400&fit=crop&auto=format" alt="Logistics Fleet Management" loading="lazy"/>
           <div class="wcard-tag-row">
             <span class="tag">Website</span><span class="tag">TMS App</span><span class="tag">GPS Tracking</span>
           </div>
@@ -1280,7 +1284,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bor1);padding:52px 20px 
       </div>
       <div class="wcard sr">
         <div class="wcard-vis wv2">
-          <div class="wcard-ico"><i class="fas fa-motorcycle"></i></div>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=400&fit=crop&auto=format" alt="TVS Motorcycle Dealer" loading="lazy"/>
           <div class="wcard-tag-row">
             <span class="tag">Dealer Website</span><span class="tag">Inventory</span><span class="tag">Bookings</span>
           </div>
