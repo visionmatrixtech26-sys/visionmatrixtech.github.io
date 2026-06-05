@@ -44,8 +44,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-
-
 /* ─── NAV ─── */
 .nav {
   position: fixed; top: 0; left: 0; width: 100%;
@@ -84,7 +82,7 @@ ul { list-style: none; }
 /* VisionMatrix Tech Logo Branding */
 .brand-vision { color: #0056FF; }
 .brand-matrix { color: #00E5FF; }
-.brand-tech { color: #0B192C; }
+.brand-tech { color: #ffffff; } /* Corrected for Dark Mode Legibility */
 
 .nav-links {
   display: flex; align-items: center; gap: 32px;
@@ -412,8 +410,19 @@ ul { list-style: none; }
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--cyan); font-size: 1.1rem;
+  font-size: 1.1rem;
 }
+
+/* Service Icons Official Colors */
+.service-icon .fa-layer-group { color: #61DAFB; } /* Web Design */
+.service-icon .fa-robot { color: #10A37F; } /* Chatbots */
+.service-icon .fa-whatsapp { color: #25D366; } /* WhatsApp */
+.service-icon .fa-database { color: #FF9900; } /* CRM */
+.service-icon .fa-mobile-alt { color: #42A5F5; } /* Mobile */
+.service-icon .fa-chart-line { color: #F24E1E; } /* SEO */
+.service-icon .fa-bullseye { color: #E1306C; } /* Meta Ads */
+.service-icon .fa-pen-nib { color: #F5C842; } /* Brand Identity */
+
 .service-body h3 {
   font-size: 1.1rem; font-weight: 600; line-height: 1.3;
 }
@@ -564,8 +573,21 @@ ul { list-style: none; }
   background: rgba(0, 212, 255, 0.04);
   transform: translateY(-4px);
 }
-.tech-item i { font-size: 2rem; color: var(--text-muted); transition: color 0.2s; }
-.tech-item:hover i { color: var(--cyan); }
+.tech-item i { font-size: 2rem; transition: filter 0.2s; }
+.tech-item:hover i { filter: brightness(1.3); }
+
+/* Tech Stack Official Colors */
+.tech-item .fa-react { color: #61DAFB; }
+.tech-item .fa-node-js { color: #339933; }
+.tech-item .fa-python { color: #3776AB; }
+.tech-item .fa-figma { color: #F24E1E; }
+.tech-item .fa-google { color: #FFCA28; }
+.tech-item .fa-github { color: #FFFFFF; }
+.tech-item .fa-whatsapp { color: #25D366; }
+.tech-item .fa-brain { color: #10A37F; }
+.tech-item .fa-wordpress { color: #21759B; }
+.tech-item .fa-cloud { color: #FF9900; }
+
 .tech-item span {
   font-size: 0.78rem; font-family: var(--font-mono);
   color: var(--text-dim); letter-spacing: 0.05em;
@@ -629,10 +651,21 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted); font-size: 0.9rem;
-  transition: border-color 0.2s, color 0.2s;
+  font-size: 1.1rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
-.footer-social a:hover { border-color: var(--border-hover); color: var(--cyan); }
+.footer-social a:hover { 
+  border-color: var(--border-hover); 
+  background: rgba(255,255,255,0.05); 
+  transform: translateY(-2px); 
+}
+
+/* Footer Social Icons Official Colors */
+.footer-social .fa-instagram { color: #E1306C; }
+.footer-social .fa-linkedin-in { color: #0077B5; }
+.footer-social .fa-whatsapp { color: #25D366; }
+.footer-social .fa-youtube { color: #FF0000; }
+
 .footer-col h4 {
   font-size: 0.78rem; font-family: var(--font-mono);
   letter-spacing: 0.12em; color: var(--text-dim);
@@ -706,7 +739,7 @@ ul { list-style: none; }
   .about-pillars { grid-template-columns: 1fr; }
   .nav-inner { padding: 0 20px; }
   .about-float-card { top: -16px; right: 8px; padding: 10px 14px; }
-  services { padding: 80px 0; }
+  .services { padding: 80px 0; }
   .about, .process, .tech-section { padding: 80px 0; }
   .section-header { margin-bottom: 48px; }
 }
