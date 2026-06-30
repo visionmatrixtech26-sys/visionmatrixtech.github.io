@@ -1,97 +1,55 @@
-/* ============================================
-   VISIONMATRIX TECH — SCRIPT.JS
-   ============================================ */
-
-// ─── NAV SCROLL ───
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// ─── HAMBURGER ───
+// Mobile menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('active');
-  hamburger.classList.toggle('open', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-window.closeMobileMenu = function() {
-  mobileMenu.classList.remove('active');
-  hamburger.classList.remove('open');
-  document.body.style.overflow = '';
-};
-
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-    closeMobileMenu();
-  }
-});
-
-// ─── HERO WORD CYCLE ───
-const words = ['Websites', 'Chatbots', 'Mobile Apps', 'Automations', 'Growth'];
-let wordIdx = 0;
-const wordEl = document.getElementById('wordCycle');
-
-function cycleWord() {
-  wordEl.classList.add('fade');
-  setTimeout(() => {
-    wordIdx = (wordIdx + 1) % words.length;
-    wordEl.textContent = words[wordIdx];
-    wordEl.classList.remove('fade');
-  }, 320);
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
 }
 
-setInterval(cycleWord, 2600);
+function closeMobileMenu() {
+  hamburger?.classList.remove('active');
+  mobileMenu?.classList.remove('active');
+}
 
-// ─── INTERSECTION OBSERVER ───
-const revealEls = document.querySelectorAll('.reveal, .process-step');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
+// Hero word cycle
+const words = ['Websites', 'Chatbots', 'Apps', 'Systems', 'Brands'];
+const wordEl = document.getElementById('wordCycle');
+let wordIndex = 0;
 
-revealEls.forEach(el => observer.observe(el));
+if (wordEl) {
+  setInterval(() => {
+    wordIndex = (wordIndex + 1) % words.length;
+    wordEl.style.opacity = 0;
+    setTimeout(() => {
+      wordEl.textContent = words[wordIndex];
+      wordEl.style.opacity = 1;
+    }, 250);
+  }, 2200);
+  wordEl.style.transition = 'opacity 0.25s ease';
+}
 
-// ─── TILT EFFECT (service cards) ───
-document.querySelectorAll('[data-tilt]').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+// Scroll reveal for process steps
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  revealEls.forEach((el) => observer.observe(el));
+}
 
-// ─── SMOOTH SCROLL FOR ANCHOR LINKS ───
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-      window.scrollTo({
-        top: target.offsetTop - offset,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// ─── PAGE LOAD ANIMATION ───
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = '0';
-  document.body.style.transition = 'opacity 0.5s ease';
-  requestAnimationFrame(() => {
-    document.body.style.opacity = '1';
-  });
-});
+// "Coming soon" toast
+function showComingSoon(e) {
+  e.preventDefault();
+  const banner = document.getElementById('comingSoonBanner');
+  if (!banner) return;
+  banner.classList.add('show');
+  setTimeout(() => banner.classList.remove('show'), 2600);
+}
